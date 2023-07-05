@@ -1,30 +1,87 @@
 <div class="videoflix-top-container">
   <span class="videoflix-logo">Videoflix</span>
-  <div class="new-to-videoflix-container">
+  <div class="new-to-videoflix-container" id="new-to-videoflix-content">
     <span>New to Videoflix?</span>
-    <button>Sign up</button>
+    <button
+      class="red-button-style"
+      (click)="
+        switchContainer(
+          'login-content',
+          'new-to-videoflix-content',
+          'sign-up-content',
+          'already-sign-up-content'
+        )
+      "
+    >
+      Sign up
+    </button>
+  </div>
+  <div class="new-to-videoflix-container d-none" id="already-sign-up-content">
+    <span>Already Sign Up?</span>
+    <button
+      class="red-button-style"
+      (click)="
+        switchContainer(
+          'sign-up-content',
+          'already-sign-up-content',
+          'login-content',
+          'new-to-videoflix-content'
+        )
+      "
+    >
+      Log In
+    </button>
+  </div>
+  <div class="new-to-videoflix-container d-none" id="back-to-login-content">
+    <span>Back to Login</span>
+    <button
+      class="red-button-style"
+      (click)="
+        switchContainer(
+          'forgot-your-password-content',
+          'back-to-login-content',
+          'login-content',
+          'new-to-videoflix-content'
+        )
+      "
+    >
+      Log In
+    </button>
   </div>
 </div>
 
 <div class="position-container">
-  <div class="login-container">
+  <div class="login-register-container" id="login-content">
     <h2>Log In</h2>
-    <form class="login-form">
+    <form class="login-form mt-32">
       <input type="email" name="email" required placeholder="E-Mail" />
       <input type="password" name="password" required placeholder="Password" />
       <div class="login-button-container">
-        <button>Log In</button>
-        <button>Guest Log In</button>
+        <button class="red-button-style width-150">Log In</button>
+        <button class="red-button-style width-150">Guest Log In</button>
       </div>
       <div class="login-checkbox-help-container">
         <div class="login-checkbox-container">
           <input type="checkbox" />
           <span>Remember me</span>
         </div>
-        <span class="need-help">Need help?</span>
+        <span
+          class="need-help"
+          (click)="
+            switchContainer(
+              'login-content',
+              'new-to-videoflix-content',
+              'forgot-your-password-content',
+              'back-to-login-content'
+            )
+          "
+          >Need help?</span
+        >
       </div>
     </form>
   </div>
+  <app-signup class="d-none" id="sign-up-content"></app-signup>
+  <app-needhelp class="d-none" id="forgot-your-password-content"></app-needhelp>
 </div>
 
 <div class="area">
