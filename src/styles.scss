@@ -43,7 +43,7 @@
   align-items: center;
   padding: 40px;
   width: 500px;
-  height: 450px;
+  height: 550px;
   background-color: #313131;
   border-radius: 30px;
  h2 {
@@ -89,4 +89,17 @@
     &:hover {
       border: 1px solid white !important;
     }
+}
+
+.show-error-message {
+  font-size: 16px;
+  color: #E50914;
+  max-width: 350px;
+  text-align: center;
+}
+
+.videoflix-logo {
+  font-size: 32px;
+  color: #E50914;
+  cursor: pointer;
 }

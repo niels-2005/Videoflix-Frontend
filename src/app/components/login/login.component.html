@@ -52,12 +52,30 @@
 
 <div class="position-container">
   <div class="login-register-container" id="login-content">
+    <div class="sign-up-successful-container" *ngIf="showMessage">
+      <span id="show-sign-up-successful-message">{{ message }}</span>
+    </div>
     <h2>Log In</h2>
     <form class="login-form mt-32">
-      <input type="email" name="email" required placeholder="E-Mail" />
-      <input type="password" name="password" required placeholder="Password" />
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="E-Mail"
+        [(ngModel)]="email"
+      />
+      <input
+        type="password"
+        name="password"
+        required
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+      <span class="show-error-message" id="log-in-error-message"></span>
       <div class="login-button-container">
-        <button class="red-button-style width-150">Log In</button>
+        <button class="red-button-style width-150" (click)="logInUser()">
+          Log In
+        </button>
         <button class="red-button-style width-150">Guest Log In</button>
       </div>
       <div class="login-checkbox-help-container">
