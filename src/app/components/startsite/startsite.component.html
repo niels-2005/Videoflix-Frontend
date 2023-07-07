@@ -1,3 +1,23 @@
 <div class="startsite-content-container">
   <app-headerbar></app-headerbar>
+  <h1>All Videos</h1>
+  <div class="video-content-container">
+    <div *ngFor="let video of videos" class="single-video-container">
+      <div
+        class="video-wrapper"
+        (mouseover)="playVideo(videoElement)"
+        (mouseout)="pauseVideo(videoElement)"
+      >
+        <video
+          #videoElement
+          [src]="video.video_file_480p"
+          type="video/mp4"
+        ></video>
+        <div class="video-overlay">
+          <h3>{{ video.title }}</h3>
+          <p>{{ video.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
