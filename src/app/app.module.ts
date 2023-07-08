@@ -10,6 +10,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { NeedhelpComponent } from './components/needhelp/needhelp.component';
 import { StartsiteComponent } from './components/startsite/startsite.component';
 import { HeaderbarComponent } from './components/headerbar/headerbar.component';
+import { ImprintPpComponent } from './components/imprint-pp/imprint-pp.component';
+import { NewVideoComponent } from './components/new-video/new-video.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HeaderbarComponent } from './components/headerbar/headerbar.component';
     SignupComponent,
     NeedhelpComponent,
     StartsiteComponent,
-    HeaderbarComponent
+    HeaderbarComponent,
+    ImprintPpComponent,
+    NewVideoComponent
   ],
   imports: [
     BrowserModule,

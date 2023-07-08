@@ -1,0 +1,15 @@
+<div class="new-video-content-container">
+  <app-headerbar></app-headerbar>
+  <div class="upload-a-new-video-container">
+    <h1>Upload a new Video</h1>
+    <input
+      type="text"
+      class="input-text"
+      placeholder="Title..."
+      [(ngModel)]="title"
+    />
+    <textarea placeholder="Description..." [(ngModel)]="description"></textarea>
+    <input type="file" class="input-file" (change)="onFileSelected($event)" />
+    <button class="red-button-style" (click)="uploadVideo()">Upload</button>
+  </div>
+</div>

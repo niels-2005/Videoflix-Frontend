@@ -40,6 +40,7 @@ export class SignupComponent {
         const result = await response.json();
         console.log(result);
         this.authSerivce.setMessage(result.message);
+        localStorage.setItem('username', this.username);
       } else {
         const errorResponse = await response.json();
         console.log('Error:', errorResponse.error);

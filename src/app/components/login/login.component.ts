@@ -91,5 +91,6 @@ export class LoginComponent implements OnInit  {
   logInGuest(){
     this.router.navigate(['/startsite']);
     localStorage.setItem('token', '92308fbd0561724b7b8f7ce6f0a970ddddaadc00');
+    localStorage.setItem('username', 'Guest');
   }
 }

@@ -1,14 +1,18 @@
 <div class="headerbar">
   <div class="headerbar-left-content">
-    <span class="videoflix-logo">Videoflix</span>
+    <span
+      class="videoflix-logo"
+      (click)="navigateToStartsite()"
+      routerLink="/startsite"
+      >Videoflix</span
+    >
     <div class="routes-container">
-      <a href="#">Startsite</a>
-      <a href="#">New Video</a>
-      <a href="#">Imprint & Privacy Policy</a>
+      <a (click)="navigateToStartsite()" routerLink="/startsite">Startsite</a>
+      <a routerLink="/new-video">New Video</a>
+      <a routerLink="/imprint-privacypolicy">Imprint & Privacy Policy</a>
     </div>
   </div>
   <div class="headerbar-right-content">
-    <input type="text" placeholder="Search Videos" class="searching-input" />
     <div class="profile-container">
       <img src="./assets/img/profile-image.png" alt="Profile Image" />
     </div>
