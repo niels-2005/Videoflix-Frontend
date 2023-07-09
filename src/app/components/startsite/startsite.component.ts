@@ -74,23 +74,37 @@ export class StartsiteComponent implements OnInit {
     this.showDropdown = !this.showDropdown;
   }
 
-  selectQuality(quality: string) {
-    // Hier kannst du den Code zur Auswahl der Qualität implementieren
+  changeQuality(event: any) {
+    const quality = event.target.value;
+    let videoPlayer = document.getElementById('videoPlayer') as HTMLVideoElement;
+
+    switch (quality) {
+      case '480p':
+        videoPlayer.src = this.selectedVideo.video_file_480p;
+        break;
+      case '720p':
+        videoPlayer.src = this.selectedVideo.video_file_720p;
+        break;
+      case '1080p':
+        videoPlayer.src = this.selectedVideo.video_file_1080p;
+        break;
+    }
+
+    videoPlayer.load();
+    videoPlayer.play();
   }
 
 
-  changeQuality(src: string, videoElement: HTMLVideoElement) {
-    videoElement.src = src;
-    videoElement.load();
-    videoElement.play();
-  }
 
   selectVideo(video: any) {
     this.startsiteService.selectVideo(video);
     if (video) {
       this.startsiteService.toggleAllVideos(false);
+      let videoQualitySelect = document.getElementById('videoQuality') as HTMLSelectElement;
+      videoQualitySelect.value = '480p';
     }
   }
+
 
   getDaysSinceCreation(created_at: string): string {
     const creationDate = new Date(created_at);

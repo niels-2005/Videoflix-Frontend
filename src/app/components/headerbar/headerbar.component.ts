@@ -10,10 +10,17 @@ import { StartsiteService } from 'src/app/services/startsite.service';
 })
 export class HeaderbarComponent implements OnInit {
 
-  constructor(private startsiteService: StartsiteService) { }
+  usernameInitial: string = '';
+
+  constructor(private startsiteService: StartsiteService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getUsername();
+  }
 
+  getUsername(){
+    const username = localStorage.getItem('username');
+    this.usernameInitial = username ? username.charAt(0).toUpperCase() : '';
   }
 
   navigateToStartsite() {
@@ -21,4 +28,23 @@ export class HeaderbarComponent implements OnInit {
     this.startsiteService.toggleAllVideos(true);
   }
 
+  async logoutUser() {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/authentication/logout/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        console.log('Logout erfolgreich');
+        this.router.navigate(['/login']);
+      } else {
+        console.error('Fehler beim Ausloggen');
+      }
+    } catch (error) {
+      console.error('Fehler beim Ausloggen', error);
+    }
+  }
 }

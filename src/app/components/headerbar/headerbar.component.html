@@ -14,7 +14,8 @@
   </div>
   <div class="headerbar-right-content">
     <div class="profile-container">
-      <img src="./assets/img/profile-image.png" alt="Profile Image" />
+      <span id="usernameInitial">{{ usernameInitial }}</span>
     </div>
+    <a (click)="logoutUser()">Logout</a>
   </div>
 </div>

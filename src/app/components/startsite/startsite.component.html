@@ -42,12 +42,25 @@
     class="single-video-content-container"
   >
     <div class="bigger-single-video">
-      <video
-        [src]="selectedVideo.video_file_480p"
-        type="video/mp4"
-        controls
-        [attr.autoplay]="true ? '' : null"
-      ></video>
+      <div class="video-container">
+        <video
+          id="videoPlayer"
+          [src]="selectedVideo.video_file_480p"
+          type="video/mp4"
+          controls
+          [attr.autoplay]="true ? '' : null"
+        ></video>
+
+        <div class="quality-control">
+          <label for="videoQuality">Quality:</label>
+          <select id="videoQuality" (change)="changeQuality($event)">
+            <option value="480p">480p</option>
+            <option value="720p">720p</option>
+            <option value="1080p">1080p</option>
+          </select>
+        </div>
+      </div>
+
       <h3>{{ selectedVideo.title }}</h3>
       <div class="selected-video-profile-container">
         <img src="./assets/img/profil-photo.png" alt="Profile Image" />

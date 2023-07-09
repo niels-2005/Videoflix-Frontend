@@ -164,3 +164,23 @@
   align-items: center;
   gap: 32px;
 }
+
+.video-container {
+  position: relative;
+
+  .quality-control {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+
+    select {
+      cursor: pointer;
+      margin-left: 10px;
+      background-color: #161616;
+      color: white;
+      border-style: unset;
+      border-radius: 2px;
+    }
+  }
+}
