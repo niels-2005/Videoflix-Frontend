@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { StartsiteService } from 'src/app/services/startsite.service';
+import { VideoService } from 'src/app/services/video.service';
 
 @Component({
   selector: 'app-startsite',
@@ -18,11 +19,12 @@ export class StartsiteComponent implements OnInit {
 
   selectedVideo: any = null;
 
-  constructor(private startsiteService: StartsiteService) {}
+  constructor(private startsiteService: StartsiteService, private videoService: VideoService) {}
 
   ngOnInit(): void {
     this.subscribeToStartsiteService();
-    this.getVideos();
+    this.subscribeToVideoService();
+    this.videoService.getVideos();
   }
 
   subscribeToStartsiteService() {
@@ -40,18 +42,10 @@ export class StartsiteComponent implements OnInit {
     });
   }
 
-  async getVideos(){
-    const requestOptions : RequestInit = {
-      method: 'GET',
-    };
-
-    await fetch("http://127.0.0.1:8000/v1/videos", requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        this.videos = result;
-        console.log(result);
-      })
-      .catch(error => console.log('error', error));
+  subscribeToVideoService() {
+    this.videoService.videos$.subscribe(videos => {
+      this.videos = videos;
+    });
   }
 
   playVideo(videoElement: HTMLVideoElement) {

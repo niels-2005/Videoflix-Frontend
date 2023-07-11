@@ -30,7 +30,10 @@
       [(ngModel)]="confirmPassword"
     />
     <span id="sign-up-error-message" class="show-error-message"></span>
-    <button class="red-button-style width-150" (click)="signUpUser()">
+    <button
+      class="red-button-style width-150 width-mobile-button"
+      (click)="signUpUser()"
+    >
       Sign Up
     </button>
   </form>

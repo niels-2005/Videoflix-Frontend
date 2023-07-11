@@ -65,10 +65,11 @@
     border-style: unset;
     padding: 16px;
     font-size: 18px;
-    color: #757575;
+    color: white;
     background-color: #2a2a2a;
     &::placeholder {
       font-size: 18px;
+      color: #757575;
     }
     &:focus {
       outline: none;
@@ -102,4 +103,62 @@
   font-size: 32px;
   color: #E50914;
   cursor: pointer;
+}
+
+@media(max-width: 800px){
+  .width-mobile {
+    width: 500px !important;
+  }
+  .login-register-container {
+    h2 {
+      font-size: 40px !important;
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+@media(max-width: 595px){
+  .login-register-container {
+    padding: 20px;
+    height: 450px;
+    width: 425px;
+  }
+  .width-mobile {
+    width: 425px !important;
+  }
+}
+
+@media(max-width: 450px){
+  .login-register-container {
+    width: 350px;
+    padding: 8px !important;
+    input {
+      width: 250px !important;
+    }
+    h2 {
+      margin-top: 15px;
+    }
+  }
+  .width-mobile {
+    width: 350px !important;
+  }
+  .login-form {
+    margin-top: 16px;
+  }
+  .width-mobile-button {
+    width: 80px !important;
+  }
+}
+
+@media(max-width: 380px){
+  .login-register-container {
+    width: 300px;
+    h2 {
+      font-size: 32px !important;
+    }
+  }
+  .width-mobile {
+    width: 300px !important;
+  }
 }

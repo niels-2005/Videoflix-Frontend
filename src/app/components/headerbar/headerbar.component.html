@@ -8,7 +8,7 @@
     >
     <div class="routes-container">
       <a (click)="navigateToStartsite()" routerLink="/startsite">Startsite</a>
-      <a routerLink="/new-video">New Video</a>
+      <a routerLink="/new-video">Videos</a>
       <a routerLink="/imprint-privacypolicy">Imprint & Privacy Policy</a>
     </div>
   </div>
@@ -18,4 +18,22 @@
     </div>
     <a (click)="logoutUser()">Logout</a>
   </div>
+  <nav role="navigation" class="hamburger-menu">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a (click)="navigateToStartsite()" routerLink="/startsite"
+          ><li>Startsite</li></a
+        >
+        <a routerLink="/new-video"><li>Videos</li></a>
+        <a routerLink="/imprint-privacypolicy"
+          ><li>Imprint & Privacy Policy</li></a
+        >
+        <a (click)="logoutUser()"><li>Logout</li></a>
+      </ul>
+    </div>
+  </nav>
 </div>

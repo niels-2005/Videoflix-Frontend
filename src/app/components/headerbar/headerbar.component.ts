@@ -47,4 +47,5 @@ export class HeaderbarComponent implements OnInit {
       console.error('Fehler beim Ausloggen', error);
     }
   }
+
 }

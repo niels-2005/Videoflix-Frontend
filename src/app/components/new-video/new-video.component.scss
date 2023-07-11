@@ -5,9 +5,9 @@
 }
 
 .upload-a-new-video-container {
-  padding: 25px 50px 0 50px;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 20px;
   h1 {
     font-size: 40px;
@@ -20,11 +20,12 @@
     border: 1px solid #757575;
     padding: 16px;
     font-size: 18px;
-    color: #757575;
+    color: white;
     background-color: #2a2a2a;
     resize: none;
     &::placeholder {
       font-size: 18px;
+      color: #757575;
     }
     &:focus {
       outline: none;
@@ -39,10 +40,11 @@
   border: 1px solid #757575;
   padding: 16px;
   font-size: 18px;
-  color: #757575;
+  color: white;
   background-color: #2a2a2a;
   &::placeholder {
     font-size: 18px;
+    color: #757575;
   }
   &:focus {
     outline: none;
@@ -51,4 +53,125 @@
 
 .input-file {
   color: white;
+  cursor: pointer;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 50px 0 50px;
+}
+
+.all-your-videos-container {
+  h1 {
+    font-size: 40px;
+    color: white;
+  }
+}
+
+.all-video-info-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: 0.1s ease-in-out;
+  max-width: 750px;
+  cursor: pointer;
+  &:hover {
+    background-color: #2A2A2A;
+  }
+  span {
+    color: white;
+    font-size: 20px;
+  }
+  video {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.selected-video-hard-infos {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  video {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+  }
+ span {
+  font-size: 24px;
+  color: white;
+ }
+}
+
+.selected-video-creation-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-video-input {
+  height: 50px;
+  width: 500px;
+  border-radius: 8px;
+  border-style: unset;
+  padding: 16px;
+  font-size: 18px;
+  color: white;
+  background-color: #2a2a2a;
+  border: 1px solid #757575;
+  &::placeholder {
+    font-size: 18px;
+    color: #757575;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.selected-video-textarea {
+  height: 150px;
+  width: 500px;
+  border-radius: 8px;
+  border: 1px solid #757575;
+  padding: 16px;
+  font-size: 18px;
+  color: white;
+  background-color: #2a2a2a;
+  resize: none;
+  &::placeholder {
+    font-size: 18px;
+    color: #757575;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.selected-video-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+
+.change-paragraph {
+  color: white;
+  font-size: 20px;
+  margin: 0;
+}
+
+.selected-video-button-container {
+  display: flex;
+  justify-content: space-between;
+  button {
+    width: 150px !important;
+  }
+}
+
+.go-back-container {
+  display: flex;
+  justify-content: flex-end;
 }
