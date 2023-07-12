@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'startsite', component: StartsiteComponent},
   {path: 'imprint-privacypolicy', component: ImprintPpComponent},
-  {path: 'new-video', component: NewVideoComponent}
+  {path: 'videos', component: NewVideoComponent}
 ];
 
 @NgModule({
