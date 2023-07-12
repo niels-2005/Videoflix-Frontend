@@ -15,10 +15,13 @@ export class LoginComponent implements OnInit  {
   email!: string;
   password!: string;
 
+  rememberMe: boolean = false;
+
   constructor(private authService: AuthenticationService, private router: Router) {}
 
   ngOnInit() {
     this.checkIfUserSignUp();
+    this.getInformations();
   }
 
   checkIfUserSignUp(){
@@ -33,6 +36,27 @@ export class LoginComponent implements OnInit  {
         'new-to-videoflix-content'
       );
     });
+  }
+
+  getInformations(){
+    const storedEmail = localStorage.getItem('email');
+    const storedPassword = localStorage.getItem('password');
+
+    if (storedEmail && storedPassword) {
+      this.email = storedEmail;
+      this.password = storedPassword;
+      this.rememberMe = true;
+    }
+  }
+
+  onRememberMeChange() {
+    if (this.rememberMe) {
+      localStorage.setItem('email', this.email);
+      localStorage.setItem('password', this.password);
+    } else {
+      localStorage.removeItem('email');
+      localStorage.removeItem('password');
+    }
   }
 
   hideSuccessMessage(){

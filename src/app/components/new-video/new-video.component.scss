@@ -63,6 +63,7 @@
 }
 
 .all-your-videos-container {
+  position: relative;
   h1 {
     font-size: 40px;
     color: white;
@@ -174,4 +175,167 @@
 .go-back-container {
   display: flex;
   justify-content: flex-end;
+}
+
+.pos-absolute-button {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+
+.go-back-d-none {
+  display: none;
+}
+
+.your-videos-informations {
+  display: flex;
+  gap: 16px;
+}
+
+@media(max-width: 1215px){
+  .all-your-videos-container {
+    h1 {
+      margin-bottom: 16px;
+    }
+  }
+  .d-none-mobile {
+    display: none;
+  }
+  .pos-absolute-button {
+    display: block;
+  }
+  .content-container {
+    justify-content: center;
+  }
+  .upload-a-new-video-container {
+    align-items: flex-start;
+  }
+  .go-back-d-none {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .upload-video-mobile-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 300px;
+  }
+}
+
+@media(max-width: 915px){
+  .content-container {
+    padding: 25px;
+  }
+}
+
+@media(max-width: 765px){
+  .all-video-info-container {
+    video {
+      object-fit: cover;
+      height: 100px;
+      width: 150px;
+    }
+  }
+}
+
+@media(max-width: 610px){
+  .content-container {
+    padding: 10px;
+  }
+  .your-videos-informations {
+    flex-direction: column;
+    span {
+      font-size: 18px;
+    }
+  }
+  .upload-a-new-video-container {
+    input {
+      width: 400px;
+    }
+    textarea {
+      width: 400px;
+    }
+  }
+  .upload-video-mobile-container {
+    gap: 200px;
+  }
+  .edit-video-button-pos-abs {
+    position: absolute;
+  }
+  .selected-video-input {
+    width: 400px;
+  }
+  .selected-video-textarea {
+    width: 400px;
+  }
+  .selected-video-hard-infos {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 8px;
+    video {
+      width: 100%;
+    }
+  }
+  .selected-video-container {
+    gap: 8px;
+    h1 {
+      font-size: 30px !important;
+      max-width: 300px;
+    }
+  }
+}
+
+@media(max-width: 430px){
+.headline-mobile-font-size {
+  font-size: 30px !important;
+  margin-top: 10px;
+}
+.all-video-info-container {
+  gap: 8px;
+}
+.your-videos-informations {
+  span {
+    max-width: 150px;
+  }
+}
+.selected-video-input {
+  width: 300px;
+}
+.selected-video-textarea {
+  width: 300px;
+}
+.upload-a-new-video-container {
+  input {
+    width: 300px;
+  }
+  textarea {
+    width: 300px;
+  }
+}
+.upload-video-mobile-container {
+  gap: 100px;
+}
+.selected-video-button-container {
+  button {
+    width: 115px !important;
+  }
+}
+.selected-video-hard-infos {
+  video {
+    width: 300px;
+  }
+}
+.selected-video-container {
+  h1 {
+    padding-top: 60px;
+  }
+}
+}
+
+@media(max-width: 350px){
+  .content-container {
+    padding: 0 !important;
+    padding-top: 6px !important;
+  }
 }

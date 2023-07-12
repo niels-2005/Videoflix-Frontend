@@ -105,6 +105,12 @@
   cursor: pointer;
 }
 
+@media(max-width: 915px){
+  .videoflix-logo {
+    font-size: 24px;
+  }
+}
+
 @media(max-width: 800px){
   .width-mobile {
     width: 500px !important;

@@ -88,7 +88,11 @@
       </div>
       <div class="login-checkbox-help-container">
         <div class="login-checkbox-container">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            [(ngModel)]="rememberMe"
+            (change)="onRememberMeChange()"
+          />
           <span>Remember me</span>
         </div>
         <span

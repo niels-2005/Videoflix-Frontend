@@ -75,11 +75,13 @@ selectVideo(video: any) {
   this.inputTitle = video.title;
   this.inputDescription = video.description;
   document.getElementById('all-your-videos')?.classList.add('d-none');
+  document.getElementById('new-video-button')?.classList.add('d-none');
 }
 
 unselectVideo(){
   this.selectedVideo = null;
   document.getElementById('all-your-videos')?.classList.remove('d-none');
+  document.getElementById('new-video-button')?.classList.remove('d-none');
 }
 
 async updateVideoInformations() {
@@ -130,6 +132,16 @@ async deleteVideo() {
     .catch(error => console.log('error', error));
 }
 
+  switchContainerUploadNewVideo(){
+    document.getElementById('all-your-videos')?.classList.add('d-none');
+    document.getElementById('new-video-button')?.classList.add('d-none');
+    document.getElementById('upload-new-video')?.classList.remove('d-none-mobile');
+  }
 
+  switchContainerBackUploadNewVideo(){
+    document.getElementById('all-your-videos')?.classList.remove('d-none');
+    document.getElementById('new-video-button')?.classList.remove('d-none');
+    document.getElementById('upload-new-video')?.classList.add('d-none-mobile');
+  }
 
 }

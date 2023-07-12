@@ -19,13 +19,13 @@ li {
 
 h1 {
   color: white;
-  font-size: 64px;
-  margin-bottom: 30px;
+  font-size: 40px;
+  margin-bottom: 15px;
   font-weight: bold;
 }
 
 .legal_notice_h2 {
-  font-size: 27px;
+  font-size: 24px;
   margin-bottom: 10px;
   margin-top: 35px;
   text-decoration: underline;
@@ -53,4 +53,42 @@ a {
 
 h3 {
   color: white;
+}
+
+@media(max-width: 915px){
+  .legal-notice-container-main {
+    padding: 25px;
+  }
+  .legal_notice_h2 {
+    margin-top: 10px;
+  }
+  p {
+    font-size: 18px;
+  }
+
+  li {
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 765px){
+  .legal-notice-container-main {
+    padding: 8px;
+  }
+}
+
+@media(max-width: 500px){
+  p {
+    font-size: 16px;
+  }
+
+  li {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 375px){
+  .legal_notice_h2 {
+    font-size: 22px;
+  }
 }
