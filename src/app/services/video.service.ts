@@ -16,7 +16,7 @@ export class VideoService {
       method: 'GET',
     };
 
-    await fetch("http://127.0.0.1:8000/v1/videos", requestOptions)
+    await fetch("https://gc-videoflix.niels-scholz.com/v1/videos/", requestOptions)
       .then(response => response.json())
       .then(result => {
         this.videos = result;

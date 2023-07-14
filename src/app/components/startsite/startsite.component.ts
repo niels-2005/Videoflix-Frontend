@@ -120,7 +120,4 @@ export class StartsiteComponent implements OnInit {
       this.videos.filter(video => video.title.toLowerCase().includes(this.searchTerm)) :
       this.videos;
   }
-
-
-
 }

@@ -52,7 +52,7 @@ async uploadVideo(){
   };
 
   try {
-      const response = await fetch("http://127.0.0.1:8000/v1/videos/", requestOptions);
+      const response = await fetch("https://gc-videoflix.niels-scholz.com/v1/videos/", requestOptions);
 
       if (response.ok) {
           const result = await response.json();
@@ -99,7 +99,7 @@ async updateVideoInformations() {
     body: raw,
   };
 
-  await fetch(`http://127.0.0.1:8000/v1/videos/${this.selectedVideo.id}/`, requestOptions)
+  await fetch(`https://gc-videoflix.niels-scholz.com/v1/videos/${this.selectedVideo.id}/`, requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result)
@@ -119,7 +119,7 @@ async deleteVideo() {
     headers: myHeaders,
   };
 
-  await fetch(`http://127.0.0.1:8000/v1/videos/${this.selectedVideo.id}/`, requestOptions)
+  await fetch(`https://gc-videoflix.niels-scholz.com/v1/videos/${this.selectedVideo.id}/`, requestOptions)
     .then(response => {
       if (response.ok) {
         console.log('Video erfolgreich gelöscht');

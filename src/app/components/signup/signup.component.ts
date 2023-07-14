@@ -34,7 +34,7 @@ export class SignupComponent {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/authentication/register/", requestOptions);
+      const response = await fetch("https://gc-videoflix.niels-scholz.com/authentication/register/", requestOptions);
 
       if (response.ok) {
         const result = await response.json();
@@ -57,6 +57,4 @@ export class SignupComponent {
       errorMessageElement.innerText = message;
     }
   }
-
-
 }
