@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit  {
 };
 
   try {
-    const response = await fetch("https://gc-videoflix.niels-scholz.com/authentication/login/", requestOptions);
+    const response = await fetch("https://googlec-videoflix.niels-scholz.com/authentication/login/", requestOptions);
 
     if (response.ok) {
       const result = await response.json();

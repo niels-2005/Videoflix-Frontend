@@ -30,7 +30,7 @@ export class HeaderbarComponent implements OnInit {
 
   async logoutUser() {
     try {
-      const response = await fetch('https://gc-videoflix.niels-scholz.com/authentication/logout/', {
+      const response = await fetch('https://googlec-videoflix.niels-scholz.com/authentication/logout/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

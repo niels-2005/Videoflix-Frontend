@@ -34,7 +34,7 @@ export class SignupComponent {
     };
 
     try {
-      const response = await fetch("https://gc-videoflix.niels-scholz.com/authentication/register/", requestOptions);
+      const response = await fetch("https://googlec-videoflix.niels-scholz.com/authentication/register/", requestOptions);
 
       if (response.ok) {
         const result = await response.json();
