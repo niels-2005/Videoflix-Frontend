@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { VideoService } from 'src/app/services/video.service';
 
 @Component({
@@ -11,6 +12,8 @@ export class NewVideoComponent implements OnInit {
 
   videos: any[] = [];
 
+  filteredVideos!: any[];
+
   selectedVideo: any = null;
 
   title!: string;
@@ -20,11 +23,17 @@ export class NewVideoComponent implements OnInit {
   inputTitle: string = '';
   inputDescription: string = '';
 
-  constructor(private router: Router, private videoService: VideoService) { }
+  uploading: boolean = false;
+
+  constructor(private router: Router, private videoService: VideoService, private tokenService: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.tokenService.checkToken();
     this.subscribeToVideoService();
     this.videoService.getVideos();
+    setTimeout(() => {
+      this.filteredVideos = this.videos.filter(video => video.created_from === localStorage.getItem('username'));
+    }, 1000);
   }
 
   subscribeToVideoService() {
@@ -40,6 +49,7 @@ export class NewVideoComponent implements OnInit {
 }
 
 async uploadVideo(){
+  this.uploading = true;
   const data = new FormData();
   data.append('created_from', localStorage.getItem('username') || '');
   data.append('title', this.title);
@@ -67,7 +77,9 @@ async uploadVideo(){
       }
   } catch (error) {
       console.log('error', error);
-  }
+  } finally {
+    this.uploading = false;
+}
 }
 
 selectVideo(video: any) {
