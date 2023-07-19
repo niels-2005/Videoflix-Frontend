@@ -1,7 +1,10 @@
 <div class="new-video-content-container">
   <app-headerbar></app-headerbar>
   <div class="content-container">
-    <div class="all-your-videos-container">
+    <div
+      class="all-your-videos-container min-width-mobile"
+      id="min-width-container"
+    >
       <button
         class="red-button-style pos-absolute-button"
         (click)="switchContainerUploadNewVideo()"

@@ -92,14 +92,12 @@ export class LoginComponent implements OnInit  {
 
     if (response.ok) {
       const result = await response.json();
-      console.log(result);
       this.router.navigate(['/startsite']);
       localStorage.setItem('token', result.token);
       localStorage.setItem('username', result.username);
     } else {
       const errorResponse = await response.json();
       this.showSignUpErrorMessage(errorResponse.error);
-      console.log('Error:', errorResponse.error);
     }
   } catch (error) {
     console.log(error);

@@ -65,15 +65,12 @@ async uploadVideo(){
       const response = await fetch("https://googlec-videoflix.niels-scholz.com/v1/videos/", requestOptions);
 
       if (response.ok) {
-          const result = await response.json();
-          console.log(result);
           this.router.navigate(['/startsite']);
           setTimeout(() => {
             window.location.reload();
           }, 1000);
       } else {
           const errorResponse = await response.json();
-          console.log('Error:', errorResponse);
       }
   } catch (error) {
       console.log('error', error);
@@ -114,7 +111,6 @@ async updateVideoInformations() {
   await fetch(`https://googlec-videoflix.niels-scholz.com/v1/videos/${this.selectedVideo.id}/`, requestOptions)
     .then(response => response.json())
     .then(result => {
-      console.log(result)
       this.selectedVideo.title = this.inputTitle;
       this.selectedVideo.description = this.inputDescription;
       this.unselectVideo();
@@ -134,7 +130,6 @@ async deleteVideo() {
   await fetch(`https://googlec-videoflix.niels-scholz.com/v1/videos/${this.selectedVideo.id}/`, requestOptions)
     .then(response => {
       if (response.ok) {
-        console.log('Video erfolgreich gelöscht');
         this.unselectVideo();
         window.location.reload();
       } else {
@@ -148,12 +143,14 @@ async deleteVideo() {
     document.getElementById('all-your-videos')?.classList.add('d-none');
     document.getElementById('new-video-button')?.classList.add('d-none');
     document.getElementById('upload-new-video')?.classList.remove('d-none-mobile');
+    document.getElementById('min-width-container')?.classList.remove('min-width-mobile');
   }
 
   switchContainerBackUploadNewVideo(){
     document.getElementById('all-your-videos')?.classList.remove('d-none');
     document.getElementById('new-video-button')?.classList.remove('d-none');
     document.getElementById('upload-new-video')?.classList.add('d-none-mobile');
+    document.getElementById('min-width-container')?.classList.add('min-width-mobile');
   }
 
 }

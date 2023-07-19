@@ -193,8 +193,11 @@
 }
 
 @media(max-width: 1215px){
-  .all-your-videos-container {
+  .min-width-mobile {
     min-width: 400px;
+  }
+
+  .all-your-videos-container {
     h1 {
       margin-bottom: 16px;
     }
@@ -291,7 +294,7 @@
 }
 
 @media(max-width: 460px){
-  .all-your-videos-container {
+  .min-width-mobile {
     min-width: 320px;
   }
 }
@@ -347,7 +350,7 @@
 }
 
 @media(max-width: 350px){
-  .all-your-videos-container {
+  .min-width-mobile {
     min-width: 300px;
   }
   .content-container {

@@ -38,7 +38,6 @@ export class HeaderbarComponent implements OnInit {
       });
 
       if (response.ok) {
-        console.log('Logout erfolgreich');
         localStorage.removeItem('token');
         localStorage.removeItem('username');
         this.router.navigate(['/login']);
